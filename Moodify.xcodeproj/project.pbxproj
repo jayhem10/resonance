@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		A4BCD9382D5813ED0060C2FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4BCD91A2D5813EC0060C2FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4BCD9212D5813EC0060C2FB;
+			remoteInfo = Moodify;
+		};
+		A4BCD9422D5813EE0060C2FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4BCD91A2D5813EC0060C2FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4BCD9212D5813EC0060C2FB;
+			remoteInfo = Moodify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A4BCD9222D5813EC0060C2FB /* Moodify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BCD9372D5813ED0060C2FB /* MoodifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BCD9412D5813EE0060C2FB /* MoodifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A4BCD9242D5813EC0060C2FB /* Moodify */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Moodify;
+			sourceTree = "<group>";
+		};
+		A4BCD93A2D5813ED0060C2FB /* MoodifyTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MoodifyTests;
+			sourceTree = "<group>";
+		};
+		A4BCD9442D5813EE0060C2FB /* MoodifyUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MoodifyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4BCD91F2D5813EC0060C2FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BCD9342D5813ED0060C2FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BCD93E2D5813EE0060C2FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4BCD9192D5813EC0060C2FB = {
+			isa = PBXGroup;
+			children = (
+				A4BCD9242D5813EC0060C2FB /* Moodify */,
+				A4BCD93A2D5813ED0060C2FB /* MoodifyTests */,
+				A4BCD9442D5813EE0060C2FB /* MoodifyUITests */,
+				A4BCD9232D5813EC0060C2FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4BCD9232D5813EC0060C2FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4BCD9222D5813EC0060C2FB /* Moodify.app */,
+				A4BCD9372D5813ED0060C2FB /* MoodifyTests.xctest */,
+				A4BCD9412D5813EE0060C2FB /* MoodifyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4BCD9212D5813EC0060C2FB /* Moodify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4BCD94B2D5813EE0060C2FB /* Build configuration list for PBXNativeTarget "Moodify" */;
+			buildPhases = (
+				A4BCD91E2D5813EC0060C2FB /* Sources */,
+				A4BCD91F2D5813EC0060C2FB /* Frameworks */,
+				A4BCD9202D5813EC0060C2FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A4BCD9242D5813EC0060C2FB /* Moodify */,
+			);
+			name = Moodify;
+			packageProductDependencies = (
+			);
+			productName = Moodify;
+			productReference = A4BCD9222D5813EC0060C2FB /* Moodify.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A4BCD9362D5813ED0060C2FB /* MoodifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4BCD94E2D5813EE0060C2FB /* Build configuration list for PBXNativeTarget "MoodifyTests" */;
+			buildPhases = (
+				A4BCD9332D5813ED0060C2FB /* Sources */,
+				A4BCD9342D5813ED0060C2FB /* Frameworks */,
+				A4BCD9352D5813ED0060C2FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4BCD9392D5813ED0060C2FB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A4BCD93A2D5813ED0060C2FB /* MoodifyTests */,
+			);
+			name = MoodifyTests;
+			packageProductDependencies = (
+			);
+			productName = MoodifyTests;
+			productReference = A4BCD9372D5813ED0060C2FB /* MoodifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A4BCD9402D5813EE0060C2FB /* MoodifyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4BCD9512D5813EE0060C2FB /* Build configuration list for PBXNativeTarget "MoodifyUITests" */;
+			buildPhases = (
+				A4BCD93D2D5813EE0060C2FB /* Sources */,
+				A4BCD93E2D5813EE0060C2FB /* Frameworks */,
+				A4BCD93F2D5813EE0060C2FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4BCD9432D5813EE0060C2FB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A4BCD9442D5813EE0060C2FB /* MoodifyUITests */,
+			);
+			name = MoodifyUITests;
+			packageProductDependencies = (
+			);
+			productName = MoodifyUITests;
+			productReference = A4BCD9412D5813EE0060C2FB /* MoodifyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4BCD91A2D5813EC0060C2FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					A4BCD9212D5813EC0060C2FB = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					A4BCD9362D5813ED0060C2FB = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A4BCD9212D5813EC0060C2FB;
+					};
+					A4BCD9402D5813EE0060C2FB = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A4BCD9212D5813EC0060C2FB;
+					};
+				};
+			};
+			buildConfigurationList = A4BCD91D2D5813EC0060C2FB /* Build configuration list for PBXProject "Moodify" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4BCD9192D5813EC0060C2FB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A4BCD9232D5813EC0060C2FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4BCD9212D5813EC0060C2FB /* Moodify */,
+				A4BCD9362D5813ED0060C2FB /* MoodifyTests */,
+				A4BCD9402D5813EE0060C2FB /* MoodifyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4BCD9202D5813EC0060C2FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BCD9352D5813ED0060C2FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BCD93F2D5813EE0060C2FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4BCD91E2D5813EC0060C2FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BCD9332D5813ED0060C2FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BCD93D2D5813EE0060C2FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A4BCD9392D5813ED0060C2FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4BCD9212D5813EC0060C2FB /* Moodify */;
+			targetProxy = A4BCD9382D5813ED0060C2FB /* PBXContainerItemProxy */;
+		};
+		A4BCD9432D5813EE0060C2FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4BCD9212D5813EC0060C2FB /* Moodify */;
+			targetProxy = A4BCD9422D5813EE0060C2FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A4BCD9492D5813EE0060C2FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A4BCD94A2D5813EE0060C2FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4BCD94C2D5813EE0060C2FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Moodify/Preview Content\"";
+				DEVELOPMENT_TEAM = MVB53MBGUX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Moodify needs access to Apple Music to create personalized playlists based on your mood.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jayhem.Moodify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4BCD94D2D5813EE0060C2FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Moodify/Preview Content\"";
+				DEVELOPMENT_TEAM = MVB53MBGUX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Moodify needs access to Apple Music to create personalized playlists based on your mood.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jayhem.Moodify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A4BCD94F2D5813EE0060C2FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MVB53MBGUX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jayhem.MoodifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Moodify.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Moodify";
+			};
+			name = Debug;
+		};
+		A4BCD9502D5813EE0060C2FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MVB53MBGUX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jayhem.MoodifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Moodify.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Moodify";
+			};
+			name = Release;
+		};
+		A4BCD9522D5813EE0060C2FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MVB53MBGUX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jayhem.MoodifyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Moodify;
+			};
+			name = Debug;
+		};
+		A4BCD9532D5813EE0060C2FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MVB53MBGUX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jayhem.MoodifyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Moodify;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4BCD91D2D5813EC0060C2FB /* Build configuration list for PBXProject "Moodify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BCD9492D5813EE0060C2FB /* Debug */,
+				A4BCD94A2D5813EE0060C2FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4BCD94B2D5813EE0060C2FB /* Build configuration list for PBXNativeTarget "Moodify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BCD94C2D5813EE0060C2FB /* Debug */,
+				A4BCD94D2D5813EE0060C2FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4BCD94E2D5813EE0060C2FB /* Build configuration list for PBXNativeTarget "MoodifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BCD94F2D5813EE0060C2FB /* Debug */,
+				A4BCD9502D5813EE0060C2FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4BCD9512D5813EE0060C2FB /* Build configuration list for PBXNativeTarget "MoodifyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BCD9522D5813EE0060C2FB /* Debug */,
+				A4BCD9532D5813EE0060C2FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4BCD91A2D5813EC0060C2FB /* Project object */;
+}
