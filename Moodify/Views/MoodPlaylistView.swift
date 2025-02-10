@@ -119,6 +119,7 @@ struct MoodPlaylistView: View {
                             ], spacing: 20) {
                                 ForEach(filteredPlaylists) { playlist in
                                     PlaylistCard(playlist: playlist)
+                                        .frame(maxWidth: .infinity, minHeight: 200) // Set a minimum height for uniformity
                                         .onTapGesture {
                                             openInSpotify(playlist)
                                         }
@@ -133,7 +134,18 @@ struct MoodPlaylistView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { dismiss() }) {
+                    Menu {
+                        Button(action: {
+                            SpotifyAuthManager.shared.signOut()
+                            showingLogin = true
+                        }) {
+                            Label("Se déconnecter", systemImage: "rectangle.portrait.and.arrow.right")
+                        }
+                        Button(action: { dismiss() }) {
+                            Image(systemName: "person.circle")
+                                .foregroundColor(.white)
+                        }
+                    } label: {
                         Image(systemName: "person.circle")
                             .foregroundColor(.white)
                     }
