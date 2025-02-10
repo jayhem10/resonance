@@ -8,32 +8,46 @@ enum SpotifyError: Error {
     case serverError(statusCode: Int)
     case decodingError
     case noData
+    case noAccessToken
+    case tokenExpired
 }
 
-class SpotifyAuthManager {
+class SpotifyAuthManager: ObservableObject {
     static let shared = SpotifyAuthManager()
     
     private let clientID = "89e1aac201964c03959db0557b4efe86" // À remplir avec votre Client ID Spotify
     private let clientSecret = "fbc7e31573e5426d842b4a750e9e23be" // À remplir avec votre Client Secret Spotify
     private let redirectURI = "moodify://callback"
     
-    var accessToken: String? {
+    @Published private(set) var isSignedIn: Bool = false
+    
+    private var accessToken: String? {
         get { UserDefaults.standard.string(forKey: "spotify_access_token") }
-        set { UserDefaults.standard.set(newValue, forKey: "spotify_access_token") }
+        set { 
+            UserDefaults.standard.set(newValue, forKey: "spotify_access_token")
+            isSignedIn = newValue != nil
+        }
     }
     
-    var refreshToken: String? {
+    private var refreshToken: String? {
         get { UserDefaults.standard.string(forKey: "spotify_refresh_token") }
         set { UserDefaults.standard.set(newValue, forKey: "spotify_refresh_token") }
     }
     
-    var tokenExpirationDate: Date? {
+    private var tokenExpirationDate: Date? {
         get { UserDefaults.standard.object(forKey: "spotify_token_expiration_date") as? Date }
         set { UserDefaults.standard.set(newValue, forKey: "spotify_token_expiration_date") }
     }
     
-    var isSignedIn: Bool {
-        return accessToken != nil
+    private init() {
+        self.isSignedIn = accessToken != nil
+    }
+    
+    func getAccessToken() throws -> String {
+        guard let token = accessToken else {
+            throw SpotifyError.noAccessToken
+        }
+        return token
     }
     
     func getAuthURL() -> URL? {
@@ -98,6 +112,13 @@ class SpotifyAuthManager {
         self.accessToken = result.access_token
         self.refreshToken = result.refresh_token
         self.tokenExpirationDate = Date().addingTimeInterval(TimeInterval(result.expires_in))
+    }
+    
+    func signOut() {
+        accessToken = nil
+        refreshToken = nil
+        tokenExpirationDate = nil
+        isSignedIn = false
     }
 }
 

@@ -2,9 +2,15 @@ import SwiftUI
 
 @main
 struct MoodifyApp: App {
+    @StateObject private var authManager = SpotifyAuthManager.shared
+    
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            if authManager.isSignedIn {
+                MoodPlaylistView()
+            } else {
+                LoginView()
+            }
         }
     }
 }

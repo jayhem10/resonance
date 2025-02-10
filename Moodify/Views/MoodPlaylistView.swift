@@ -178,6 +178,12 @@ struct MoodPlaylistView: View {
                     errorMessage = "Erreur de décodage des données"
                 case .noData:
                     errorMessage = "Aucune donnée reçue"
+                case .noAccessToken:
+                    showingLogin = true
+                    errorMessage = "Veuillez vous connecter à Spotify"
+                case .tokenExpired:
+                    showingLogin = true
+                    errorMessage = "Votre session a expiré, veuillez vous reconnecter"
                 }
                 isLoading = false
             }
