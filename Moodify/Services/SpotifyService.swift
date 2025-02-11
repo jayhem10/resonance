@@ -4,7 +4,7 @@ class SpotifyService {
     static let shared = SpotifyService()
     private let baseURL = "https://api.spotify.com/v1"
     
-    struct SpotifyPlaylist: Codable, Identifiable {
+    struct SpotifyPlaylist: Codable, Identifiable, Equatable {
         let id: String
         let name: String
         let description: String?
@@ -20,9 +20,13 @@ class SpotifyService {
             guard let urlString = external_urls["spotify"] else { return nil }
             return URL(string: urlString)
         }
+        
+        static func == (lhs: SpotifyPlaylist, rhs: SpotifyPlaylist) -> Bool {
+            return lhs.id == rhs.id
+        }
     }
     
-    struct SpotifyImage: Codable {
+    struct SpotifyImage: Codable, Equatable {
         let url: String
         let height: Int?
         let width: Int?
