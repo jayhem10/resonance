@@ -44,10 +44,10 @@ class SpotifyService {
         }
     }
     
-    func searchPlaylists(query: String, limit: Int = 50) async throws -> [SpotifyPlaylist] {
+    func searchPlaylists(query: String, limit: Int = 50, offset: Int = 0) async throws -> [SpotifyPlaylist] {
         let accessToken = try SpotifyAuthManager.shared.getAccessToken()
         guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let url = URL(string: "\(baseURL)/search?q=\(encodedQuery)&type=playlist&limit=\(limit)") else {
+              let url = URL(string: "\(baseURL)/search?q=\(encodedQuery)&type=playlist&limit=\(limit)&offset=\(offset)") else {
             throw SpotifyError.invalidURL
         }
         

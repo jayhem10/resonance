@@ -1,5 +1,19 @@
 import SwiftUI
 
+extension Color {
+    static let deepBlue = Color(red: 0.1, green: 0.2, blue: 0.5)
+    static let neonOrange = Color(red: 1.0, green: 0.5, blue: 0.0)
+    static let softBlue = Color(red: 0.6, green: 0.8, blue: 1.0)
+    static let aqua = Color(red: 0.0, green: 0.8, blue: 0.8)
+    static let darkRed = Color(red: 0.5, green: 0.0, blue: 0.0)
+    static let softPink = Color(red: 1.0, green: 0.7, blue: 0.8)
+    static let midnightBlue = Color(red: 0.1, green: 0.1, blue: 0.3)
+    static let duskyPurple = Color(red: 0.4, green: 0.3, blue: 0.5)
+    static let electricBlue = Color(red: 0.0, green: 0.5, blue: 1.0)
+    static let coolCyan = Color(red: 0.0, green: 0.7, blue: 0.7)
+    static let darkBlue = Color(red: 0.1, green: 0.1, blue: 0.4)
+}
+
 struct MoodPlaylistView: View {
     @State private var selectedMood: Mood = .happy
     @State private var playlists: [SpotifyService.SpotifyPlaylist] = []
@@ -7,6 +21,8 @@ struct MoodPlaylistView: View {
     @State private var errorMessage: String?
     @State private var showingLogin = false
     @State private var searchText = ""
+    @State private var currentOffset = 0
+    @State private var hasMoreResults = true
     @Environment(\.dismiss) private var dismiss
     
     private let columns = [
@@ -16,44 +32,61 @@ struct MoodPlaylistView: View {
     
     enum Mood: String, CaseIterable {
         case happy = "Happy"
-        case chill = "Chill"
+        case sad = "Sad"
         case energetic = "Energetic"
-        case melancholic = "Melancholic"
+        case calm = "Calm"
         case romantic = "Romantic"
+        case melancholic = "Melancholic"
         case focused = "Focused"
+        case chill = "Chill"
         
         var icon: String {
             switch self {
             case .happy: return "face.smiling"
-            case .chill: return "leaf"
+            case .sad: return "cloud.rain"
+            case .chill: return "wind"
+            case .focused: return "eye"
             case .energetic: return "bolt"
-            case .melancholic: return "cloud.rain"
+            case .calm: return "leaf"
             case .romantic: return "heart"
-            case .focused: return "brain.head.profile"
+            case .melancholic: return "moon.stars"
             }
         }
         
-        var searchTerm: String {
+        var searchTerms: [String] {
             switch self {
-            case .happy: return "happy upbeat playlist"
-            case .chill: return "chill relaxing playlist"
-            case .energetic: return "energetic workout playlist"
-            case .melancholic: return "melancholic sad playlist"
-            case .romantic: return "romantic love songs playlist"
-            case .focused: return "focus study playlist"
+            case .happy: 
+                return ["happy", "joy", "positive", "upbeat", "cheerful", "fun", "celebration"]
+            case .chill:
+                return ["chill", "relaxation", "peaceful", "meditation", "calm", "ambient"]
+            case .focused:
+                return ["focused", "focus", "attention", "concentration", "mental", "brain"]
+            case .sad: 
+                return ["sad", "melancholy", "heartbreak", "lonely", "emotional", "deep"]
+            case .energetic: 
+                return ["energetic", "workout", "party", "motivation", "power", "intense"]
+            case .calm: 
+                return ["calm", "relaxation", "peaceful", "meditation", "chill", "ambient"]
+            case .romantic: 
+                return ["romantic", "love", "tender", "intimate", "passion", "sweet"]
+            case .melancholic: 
+                return ["melancholic", "nostalgia", "bittersweet", "reflective", "moody"]
             }
         }
         
         var gradient: [Color] {
             switch self {
-            case .happy: return [.yellow, .orange]
-            case .chill: return [.mint, .teal]
-            case .energetic: return [.red, .orange]
-            case .melancholic: return [.purple, .blue]
-            case .romantic: return [.pink, .red]
-            case .focused: return [.blue, .cyan]
+            case .happy: return [.yellow, .pink]
+            case .sad: return [.deepBlue, .gray]
+            case .energetic: return [.red, .neonOrange]
+            case .calm: return [.green, .softBlue] // Teinte verte pour Calm
+            case .chill: return [.blue, .cyan] // Teinte bleue pour Chill
+            case .focused: return [.purple, .darkBlue]
+            case .romantic: return [.darkRed, .softPink]
+            case .melancholic: return [.midnightBlue, .duskyPurple]
             }
         }
+
     }
     
     var body: some View {
@@ -66,6 +99,8 @@ struct MoodPlaylistView: View {
                 showingLogin: $showingLogin,
                 searchText: $searchText,
                 onFetchPlaylists: fetchPlaylists,
+                onLoadMorePlaylists: loadMorePlaylists,
+                hasMoreResults: hasMoreResults,
                 onOpenSpotify: openInSpotify
             )
         }
@@ -75,6 +110,8 @@ struct MoodPlaylistView: View {
         isLoading = true
         errorMessage = nil
         searchText = ""
+        currentOffset = 0
+        hasMoreResults = true
         
         guard SpotifyAuthManager.shared.isSignedIn else {
             showingLogin = true
@@ -83,20 +120,42 @@ struct MoodPlaylistView: View {
         }
         
         do {
-            let playlists = try await SpotifyService.shared.searchPlaylists(query: mood.searchTerm, limit: 50)
+            let playlists = try await SpotifyService.shared.searchPlaylists(query: mood.searchTerms.joined(separator: " "), limit: 50, offset: currentOffset)
             await MainActor.run {
                 self.playlists = playlists
                 isLoading = false
+                hasMoreResults = playlists.count == 50
             }
         } catch let error as SpotifyError {
             await MainActor.run {
                 handleError(error)
                 isLoading = false
+                hasMoreResults = false
             }
         } catch {
             await MainActor.run {
                 errorMessage = "Erreur: \(error.localizedDescription)"
                 isLoading = false
+                hasMoreResults = false
+            }
+        }
+    }
+    
+    private func loadMorePlaylists() async {
+        guard !isLoading, hasMoreResults else { return }
+        
+        currentOffset += 50
+        
+        do {
+            let morePlaylists = try await SpotifyService.shared.searchPlaylists(query: selectedMood.searchTerms.joined(separator: " "), limit: 50, offset: currentOffset)
+            await MainActor.run {
+                self.playlists.append(contentsOf: morePlaylists)
+                hasMoreResults = morePlaylists.count == 50
+            }
+        } catch {
+            await MainActor.run {
+                errorMessage = "Erreur lors du chargement de plus de playlists"
+                hasMoreResults = false
             }
         }
     }
@@ -138,6 +197,8 @@ struct MainContentView: View {
     @Binding var searchText: String
     @State private var showingProfile = false
     let onFetchPlaylists: (MoodPlaylistView.Mood) async -> Void
+    let onLoadMorePlaylists: () async -> Void
+    let hasMoreResults: Bool
     let onOpenSpotify: (SpotifyService.SpotifyPlaylist) -> Void
     
     private var filteredPlaylists: [SpotifyService.SpotifyPlaylist] {
@@ -184,7 +245,7 @@ struct MainContentView: View {
                             ErrorView(message: error)
                         } else {
                             ResultsCountView(count: filteredPlaylists.count)
-                            PlaylistsGridView(playlists: filteredPlaylists, onOpenSpotify: onOpenSpotify)
+                            PlaylistsGridView(playlists: filteredPlaylists, onOpenSpotify: onOpenSpotify, onLoadMorePlaylists: onLoadMorePlaylists, hasMoreResults: hasMoreResults)
                         }
                     }
                 }
@@ -287,6 +348,8 @@ struct ResultsCountView: View {
 struct PlaylistsGridView: View {
     let playlists: [SpotifyService.SpotifyPlaylist]
     let onOpenSpotify: (SpotifyService.SpotifyPlaylist) -> Void
+    let onLoadMorePlaylists: () async -> Void
+    let hasMoreResults: Bool
     
     private let columns = [
         GridItem(.flexible(), spacing: 20),
@@ -298,6 +361,16 @@ struct PlaylistsGridView: View {
             ForEach(playlists) { playlist in
                 PlaylistCard(playlist: playlist)
                     .onTapGesture { onOpenSpotify(playlist) }
+            }
+            if hasMoreResults {
+                Button(action: { Task { await onLoadMorePlaylists() } }) {
+                    Text("Charger plus de playlists")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(15)
+                }
             }
         }
         .padding()
